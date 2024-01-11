@@ -1,0 +1,9 @@
+{
+  "name": "truedocs-template",
+  "version": "1.0.0",
+  "dependencies": {
+    "parcel-bundler": "^1.6.1"
+  },
+  "scripts": {},
+  "devDependencies": {}
+}
