@@ -121,7 +121,9 @@
 
 @media(max-width: 767px) {
   .navbar-navbar {
-    padding-bottom: var(--dl-space-space-fourunits);
+    padding-bottom: 0.5rem;
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
   }
   .navbar-branding-logo {
     width: 80px;
@@ -847,7 +849,7 @@
 }
 .home-image03 {
   width: 100%;
-  height: 134px;
+  height: auto;
   object-fit: contain;
 }
 .home-image04 {
@@ -1697,9 +1699,10 @@
 }
 @media(max-width: 991px) {
   .home-section {
-    height: auto;
+    height: 100vh;
     padding-left: 0px;
     padding-right: 0px;
+    background-position: 50% 0;
   }
   .home-hero {
     gap: var(--dl-space-space-fourunits);
@@ -1758,12 +1761,25 @@
     max-width: 100%;
   }
   .home-main1 {
-    align-items: flex-start;
+    align-items: center;
   }
   .home-section02 {
     gap: var(--dl-space-space-threeunits);
     padding-top: 100px;
     padding-bottom: 100px;
+  }
+  .home-heading01 {
+    width: auto;
+  }
+  .home-container1 {
+    width: 100%;
+  }
+  .home-container2 {
+    width: 80%;
+    height: auto;
+  }
+  .home-container3 {
+    display: none;
   }
   .home-header01 {
     gap: var(--dl-space-space-unit);
@@ -1844,8 +1860,10 @@
     width: 500px;
   }
   .home-section01 {
-    padding-top: 100px;
+    padding-top: 70px;
     padding-bottom: 100px;
+    padding-left: var(--dl-space-space-twounits);
+  padding-right: var(--dl-space-space-twounits);
   }
   .home-text08 {
     font-size: 32px;
@@ -1855,7 +1873,7 @@
     gap: var(--dl-space-space-oneandhalfunits);
     margin-top: var(--dl-space-space-threeunits);
     border-color: #5A5A5A;
-    margin-bottom: var(--dl-space-space-threeunits);
+    margin-bottom: var(--dl-space-space-sixunits);
     flex-direction: column;
   }
   .home-feature {
@@ -1884,9 +1902,12 @@
   .home-fake-documents-news {
     gap: var(--dl-space-space-threeunits);
   }
+  .home-container2 {
+    width: 100%;
+  }
   .home-main1 {
     width: 100%;
-    align-items: flex-start;
+    align-items: center;
   }
   .home-heading01 {
     font-size: 28px;
