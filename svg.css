@@ -1218,3 +1218,13 @@
   animation: arrows 1s ease-in-out infinite alternate,
     p 2s ease infinite alternate;
 }
+
+
+@media(max-width: 767px) {
+  .blockchain-svg-container {
+    width: 45%;
+    margin: 0;
+    max-height: 350px;
+    margin-top: 2rem;
+  }
+}

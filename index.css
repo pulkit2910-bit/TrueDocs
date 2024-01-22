@@ -164,10 +164,11 @@
   flex-direction: column;
   justify-content: flex-start;
   background-color: #292929;
+  opacity: 0;
 }
 .translateYAnimation {
   animation: translateYAnimation 1.5s forwards;
-  animation-delay: 0.25s;
+  animation-delay: 0.1s;
 }
 @keyframes translateYAnimation {
   0% {
@@ -250,7 +251,7 @@
 .translatePoints:nth-child(3) {
   animation-delay: 0.65s; /* Delay the animation of the third box by 2 seconds */
 }
-@keyframes translateYAnimation {
+/* @keyframes translateYAnimation {
   0% {
     transform: translateY(100px);
     opacity: 0;
@@ -259,7 +260,7 @@
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 .mark-icon {
   display: flex;
   padding: var(--dl-space-space-halfunit);
@@ -359,10 +360,10 @@
 
 @media(max-width: 991px) {
   .article-card {
-    padding-top: var(--dl-space-space-twounits);
-    padding-left: var(--dl-space-space-oneandhalfunits);
-    padding-right: var(--dl-space-space-oneandhalfunits);
-    padding-bottom: var(--dl-space-space-twounits);
+    padding: var(--dl-space-space-threeunits) var(--dl-space-space-twounits);
+    width: 60%;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -806,7 +807,7 @@
   justify-content: center;
 }
 .home-main1 {
-  gap: var(--dl-space-space-oneandhalfunits);
+  gap: var(--dl-space-space-twounits);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -823,7 +824,7 @@
 }
 .home-container1 {
   width: 872px;
-  height: 482px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1028,7 +1029,6 @@
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  opacity: 0;
 }
 .home-section04 {
   gap: var(--dl-space-space-sixunits);
@@ -1766,8 +1766,10 @@
   }
   .home-section02 {
     gap: var(--dl-space-space-threeunits);
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
   }
   .home-heading01 {
     width: auto;
@@ -1808,9 +1810,13 @@
     flex-direction: column;
     justify-content: center;
   }
+  .home-header04 {
+    justify-items: center;
+    align-items: center;
+  }
   .partners {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
   }
   .home-get-started4 {
     width: 100%;
@@ -1820,6 +1826,7 @@
   }
   .home-cards1 {
     gap: var(--dl-space-space-halfunit);
+    flex-direction: column;
   }
   .home-content4 {
     gap: var(--dl-space-space-threeunits);
@@ -1869,13 +1876,13 @@
     width: 500px;
   }
   .home-section01 {
-    padding-top: 70px;
-    padding-bottom: 100px;
-    padding-left: var(--dl-space-space-twounits);
-  padding-right: var(--dl-space-space-twounits);
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
   }
   .home-text08 {
-    font-size: 32px;
+    font-size: 26px;
     text-align: center;
   }
   .home-features {
@@ -1925,24 +1932,36 @@
     gap: var(--dl-space-space-unit);
   }
   .home-section04 {
-    gap: var(--dl-space-space-fourunits);
-    padding-bottom: var(--dl-space-space-twounits);
+    gap: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-sixunits);
+    margin-bottom: var(--dl-space-space-sixunits);
   }
   .home-text19 {
     font-size: 32px;
     text-align: center;
   }
   .home-note {
-    flex-direction: column-reverse;
+    display: flex;
+    flex-direction: column;
   }
   .home-note1 {
-    flex-direction: column-reverse;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    margin-top: 2rem;
+  }
+  .home-image08 {
+    margin-top: 4rem;
+  }
+  .home-image09 {
+    width: 125%;
+    height: auto;
   }
   .home-banner {
-    padding-top: var(--dl-space-space-threeunits);
+    padding-top: var(--dl-space-space-sixunits);
     padding-left: var(--dl-space-space-oneandhalfunits);
     padding-right: var(--dl-space-space-oneandhalfunits);
-    padding-bottom: var(--dl-space-space-threeunits);
+    padding-bottom: var(--dl-space-space-sixunits);
   }
   .home-cards1 {
     gap: var(--dl-space-space-oneandhalfunits);
@@ -1966,6 +1985,13 @@
     font-family: Poppins;
     font-weight: 500;
     line-height: 24px;
+  }
+  .home-section07 {
+    margin-bottom: var(--dl-space-space-twounits);
+  }
+  .partners img {
+    height: 5rem;
+    width: 5rem;
   }
 }
 @media(max-width: 479px) {
@@ -2002,5 +2028,12 @@
     font-family: Inter;
     font-weight: 700;
     line-height: 24px;
+  }
+  .section-heading02 {
+    font-size: 32px;
+  }
+
+  .card-card {
+    padding: var(--dl-space-space-threeunits);
   }
 }

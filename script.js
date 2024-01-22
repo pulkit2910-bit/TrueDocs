@@ -10,9 +10,10 @@ function isElementInViewport(el) {
   );
 }
 
-// introduction section
+// event listener for listening to scroll
 document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", function () {
+
 
     // Navbar section
     var navbar = document.getElementsByClassName("navbar-navbar")[0];
@@ -37,6 +38,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
+
+
+    // Home Features section
+    var point1 = document.getElementsByClassName("home-feature")[0];
+    var point3 = document.getElementsByClassName("home-feature2")[0];
+
+    if (isElementInViewport(point1)) {
+      // Add the class to trigger the animation
+      point1.classList.add("feature-border-animate");
+      point3.classList.add("feature-border-animate");
+    }
+
+
+
     // Fake News Section
     var rollingDiv = document.getElementsByClassName("home-container1")[0];
     var imgLeft1 = document.getElementsByClassName("home-image02")[0];
@@ -54,43 +69,40 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // Home Features section
-    var point1 = document.getElementsByClassName("home-feature")[0];
-    var point3 = document.getElementsByClassName("home-feature2")[0];
-
-    if (isElementInViewport(point1)) {
-      // Add the class to trigger the animation
-      point1.classList.add("feature-border-animate");
-      point3.classList.add("feature-border-animate");
-    }
-
 
     // Actual Features section
-    var featureCards = document.getElementsByClassName("home-cards")[0];
+    var featureCards = document.getElementsByClassName("card-card");
     var featureDesc = document.getElementsByClassName("features-description")[0];
     
     if (isElementInViewport(featureDesc)) {
-      // Add the class to trigger the animation
       featureDesc.classList.add('features-description-animate');
-      featureCards.classList.add('translateYAnimation');
     }
+
+    [...featureCards].forEach(card => {
+      // console.log(card);
+      if (isElementInViewport(card)) {
+        card.classList.add('translateYAnimation');
+      }
+    });
+
 
 
     // Why BlockChain section
-    var whyBlockchain = document.getElementsByClassName("home-heading03")[0];
     var blockChainSvg = document.getElementsByClassName("blockchain-svg-container")[0];
-    var WhyUsPoints = this.document.getElementsByClassName("mark-mark");
+    var WhyUsPoints = document.getElementsByClassName("mark-mark");
   
-    if (isElementInViewport(whyBlockchain)) {
+    if (isElementInViewport(blockChainSvg)) {
       // Add the class to trigger the animation
       blockChainSvg.classList.add('translateYAnimation');
-    
+    }
+    if (isElementInViewport(WhyUsPoints[0])) {
       for (const [idx, el] of [...WhyUsPoints].entries()) {
         if (idx > 2) return;
         el.classList.add('translatePoints')
       }
     }
 
+    
 
     // Why AI section
     var whyAI = document.getElementsByClassName("home-heading05")[0];
@@ -105,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     // Our partners section
     var partners = document.querySelectorAll(".partners img");
 
@@ -113,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         el.classList.add("partners-roll");
       })
     }
+
 
 
     // Our Team Section
@@ -126,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       ourTeams.classList.add('translateYAnimation')
     }
+
   });
 });
 
