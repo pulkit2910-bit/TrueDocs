@@ -10,8 +10,8 @@ function isElementInViewport(el) {
   );
 }
 
-// event listener for listening to scroll
 document.addEventListener("DOMContentLoaded", function () {
+  // event listener for listening to scroll
   window.addEventListener("scroll", function () {
 
 
@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     [...featureCards].forEach(card => {
-      // console.log(card);
       if (isElementInViewport(card)) {
         card.classList.add('translateYAnimation');
       }
@@ -92,10 +91,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var WhyUsPoints = document.getElementsByClassName("mark-mark");
   
     if (isElementInViewport(blockChainSvg)) {
-      // Add the class to trigger the animation
+      // Adding appearing animation to blockchain svg 
       blockChainSvg.classList.add('translateYAnimation');
     }
     if (isElementInViewport(WhyUsPoints[0])) {
+      // Adding appearing animation to "points of why Blockchain" ?
       for (const [idx, el] of [...WhyUsPoints].entries()) {
         if (idx > 2) return;
         el.classList.add('translatePoints')
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var whyAI = document.getElementsByClassName("home-heading05")[0];
     
     if (isElementInViewport(whyAI)) {
-      // Add the class to trigger the animation
+      // Adding appearing animation to "points of why AI" ?
       for (const [idx, el] of [...WhyUsPoints].entries()) {
         if (idx > 2) {
           el.classList.add('translatePoints')
@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var partners = document.querySelectorAll(".partners img");
 
     if (isElementInViewport(partners[0])) {
+      // add rolling animation to our partners
       partners.forEach(el => {
         el.classList.add("partners-roll");
       })
@@ -130,17 +131,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Our Team Section
-    var ourTeams = document.getElementsByClassName("home-cards1")[0];
-    var socialHandles = document.querySelectorAll(".home-socials a");
-    
-    if (isElementInViewport(ourTeams)) {
-      // Add the class to trigger the animation
-      socialHandles.forEach(el => {
-        el.classList.add("translateSocials");
-      });
-      ourTeams.classList.add('translateYAnimation')
-    }
+    var ourTeams = document.getElementsByClassName("article-card");
+    // var socialHandles = document.querySelectorAll(".article-card a");
+
+    [...ourTeams].forEach(memberCard => {
+        if (isElementInViewport(memberCard)) {
+          // add appear animation particular team member 
+          memberCard.classList.add("translateYAnimation");
+
+          // socialHandles contains array of anchor tag 
+          var socialHandles = memberCard.children[0].children[2].children;
+          // console.log(socialHandles);
+
+          // add animation to socialHandles of the particular team member
+          [...socialHandles].forEach(el => {
+            el.classList.add("translateSocials");
+          });
+        }
+    })
 
   });
+  
+  // event listener for prevent displaying endpoint in the url and scrolling into the view of the section
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+  
 });
 

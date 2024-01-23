@@ -59,10 +59,11 @@
           />
           <div class="navbar-nav-content">
             <div class="navbar-nav-links">
-              <a class="navbar-link nav-link nav-link-web">Features</a>
-              <a class="nav-link nav-link-web">Why us</a>
+              <a class="nav-link nav-link-web" href="#features">Features</a>
+              <a class="nav-link nav-link-web" href="#whyUs">Why us</a>
               <a class="nav-link nav-link-web">Issuer</a>
-              <a class="nav-link nav-link-web">Contact</a>
+              <a class="nav-link nav-link-web" href="#ourTeam">Our Team</a>
+              <a class="nav-link nav-link-web" href="#footer">Contact</a>
             </div>
             <div class="navbar-get-started get-started">
               <span class="navbar-text2">Get started</span>
@@ -91,10 +92,11 @@
               </div>
             </div>
             <div class="navbar-nav-links1">
-              <span class="nav-link">Features</span>
-              <span class="nav-link">Why us</span>
-              <span class="nav-link">Prices</span>
-              <span class="nav-link">Contact</span>
+              <a class="nav-link nav-link-mobile" href="#features">Features</a>
+              <a class="nav-link nav-link-mobile" href="#whyUs">Why us</a>
+              <a class="nav-link nav-link-mobile">Issuer</a>
+              <a class="nav-link nav-link-mobile" href="#ourTeam">Our Team</a>
+              <a class="nav-link nav-link-mobile" href="#footer">Contact</a>
             </div>
             <div class="get-started">
               <span class="navbar-text3">Get started</span>
@@ -126,21 +128,30 @@
 
                 const runMobileMenuCodeEmbed = () => {
                     // Mobile menu
-                    const mobileMenu = document.querySelector('#mobile-menu')
+                  const mobileMenu = document.querySelector('#mobile-menu')
 
-                    // Buttons
-                    const closeButton = document.querySelector('#close-mobile-menu')
-                    const openButton = document.querySelector('#open-mobile-menu')
+                  function openNavbarMenu() {
+                    mobileMenu.style.transform = 'translateX(0%)'
+                  }
+                  function closeNabarMenu() {
+                    mobileMenu.style.transform = 'translateX(100%)'
+                  }
 
-                    // On openButton click, set the mobileMenu position left to -100vw
-                    openButton && openButton.addEventListener('click', function() {
-                        mobileMenu.style.transform = 'translateX(0%)'
-                    })
 
-                    // On closeButton click, set the mobileMenu position to 0vw
-                    closeButton && closeButton.addEventListener('click', function() {
-                        mobileMenu.style.transform = 'translateX(100%)'
-                    })
+                  // Buttons
+                  const closeButton = document.querySelector('#close-mobile-menu')
+                  const openButton = document.querySelector('#open-mobile-menu')
+                  const navLinks = document.querySelectorAll('.nav-link-mobile');
+
+                  // On openButton click, set the mobileMenu position left to -100vw
+                  openButton && openButton.addEventListener('click', openNavbarMenu)
+
+                  // On closeButton click, set the mobileMenu position to 0vw
+                  closeButton && closeButton.addEventListener('click', closeNabarMenu)
+
+                  navLinks.forEach(navLink => {
+                    navLink.addEventListener('click', closeNabarMenu);
+                  })
                 }
 
                 runMobileMenuCodeEmbed()
@@ -245,7 +256,7 @@
             </div>
           </div>
         </section>
-        <section class="home-section02">
+        <section class="home-section02" id="features">
           <header class="home-header01">
             <header>
               <h2 class="section-heading section-heading02">
@@ -317,7 +328,7 @@
             </div>
           </main>
         </section>
-        <section class="home-section04">
+        <section class="home-section04" id="whyUs">
           <header class="home-header02">
             <h2 class="home-text19">Why Us ?</h2>
             <span class="home-text20">
@@ -4225,7 +4236,7 @@
             <div class="home-left1 side"></div>
           </div>
         </section>
-        <section class="home-section08">
+        <section class="home-section08" id="ourTeam">
           <header class="home-header05">
             <h2 class="home-heading08 section-heading">
               Our Team
@@ -4241,7 +4252,7 @@
                 </div>
                 <p class="article-description">
                   <span>
-                    BTECH CSE
+                    Lorem ipsum Fuga, distinctio fugit ratione excepturi rerum sequi maiores eius in voluptate laudantium eveniet atque facilis cumque aut alias aliquid.
                   </span>
                 </p>
                 <div class="home-socials">
@@ -4393,8 +4404,8 @@
           </main>
         </section>
         
-        <footer class="home-footer">
-          <div class="home-content4">
+        <footer class="home-footer" id="footer">
+          <div class="footer-container">
             <main class="home-main-content">
               <div class="home-content5">
                 <header class="home-main4">
@@ -4408,12 +4419,11 @@
                       Authenticate. Verify. Trust.
                     </span>
                   </div>
-                  <div class="home-socials">
+                  <div class="footer-socials">
                     <a
                       href="https://example.com"
                       target="_blank"
                       rel="noreferrer noopener"
-                      class="home-link"
                     >
                       <img
                         alt="image"
@@ -4425,7 +4435,6 @@
                       href="https://example.com"
                       target="_blank"
                       rel="noreferrer noopener"
-                      class="home-link1"
                     >
                       <img
                         alt="image"
@@ -4437,7 +4446,6 @@
                       href="https://example.com"
                       target="_blank"
                       rel="noreferrer noopener"
-                      class="home-link2"
                     >
                       <img
                         alt="image"
@@ -4490,7 +4498,7 @@
                   <div class="home-buy button">
                     <span class="home-text40">-&gt;</span>
                     <span class="home-text41">
-                      <span>Subscribe now</span>
+                      <span>Subscribe</span>
                       <br />
                     </span>
                   </div>
